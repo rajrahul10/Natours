@@ -1,3 +1,3 @@
 # Natours
 
-This Natours project is a part of Advanced CSS course by Jonas Schmedtmann.
+This Natours project is a part of "Advanced CSS And Sass" course by Jonas Schmedtmann.
