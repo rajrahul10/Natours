@@ -27,10 +27,20 @@
         -webkit-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%);
 
-        clip-path: circle(50% at 50% 50%);
-
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            // shape-outside works with float or it dimension must be there (height, width)
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            border-radius: none;
+        }
 
         @include respond(phone) {
             transform: translateX(-3rem) skewX(0);
